@@ -14,6 +14,7 @@ import {
   Window,
 } from "stream-chat-react";
 import { StreamChat } from "stream-chat";
+import { connectUserOnce, getClient } from "../lib/streamClient";
 import toast from "react-hot-toast";
 
 import ChatLoader from "../components/ChatLoader";
@@ -43,9 +44,9 @@ const ChatPage = () => {
       try {
         console.log("Initializing stream chat client...");
 
-        const client = StreamChat.getInstance(STREAM_API_KEY);
-
-        await client.connectUser(
+        // connect using our singleton helper to avoid multiple connectUser calls
+        const client = await connectUserOnce(
+          STREAM_API_KEY,
           {
             id: authUser._id,
             name: authUser.fullName,
