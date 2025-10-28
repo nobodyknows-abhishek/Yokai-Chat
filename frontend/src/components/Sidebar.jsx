@@ -4,7 +4,7 @@ import {
   BellIcon,
   HomeIcon,
   LoaderPinwheelIcon,
-  UsersIcon,
+  MessageCircleMore,
 } from "lucide-react";
 
 const Sidebar = ({ isOpen = false, onClose = () => {} }) => {
@@ -41,7 +41,7 @@ const Sidebar = ({ isOpen = false, onClose = () => {} }) => {
             currentPath === "/messages" ? "btn-active" : ""
           }`}
         >
-          <UsersIcon className="size-5 text-base-content opacity-70" />
+          <MessageCircleMore className="size-5 text-base-content opacity-70" />
           <span>Messages</span>
         </Link>
 
@@ -121,7 +121,7 @@ const Sidebar = ({ isOpen = false, onClose = () => {} }) => {
               currentPath === "/messages" ? "btn-active" : ""
             }`}
           >
-            <UsersIcon className="size-5 text-base-content opacity-70" />
+            <MessageCircleMore className="size-5 text-base-content opacity-70" />
             <span>Messages</span>
           </Link>
 
